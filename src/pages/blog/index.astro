@@ -8,7 +8,7 @@ const posts = (await getCollection("blog")).sort(
 );
 ---
 
-<Layout title={SITE_TITLE}>
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <main class="max-w-5xl mx-auto my-8 px-3" transition:animate="slide">
     <section>
       <h1 class="text-4xl font-bold mt-16 mb-8 text-center">All Posts</h1>

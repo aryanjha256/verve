@@ -1,0 +1,23 @@
+---
+import { SITE_TITLE, SITE_LOGO } from "../config";
+---
+
+<header class="flex items-center justify-between py-6">
+  {
+    SITE_LOGO ? (
+      <img src={SITE_LOGO} alt={SITE_TITLE} class="w-8 h-8" />
+    ) : (
+      <span class="text-xl font-bold">Verve</span>
+    )
+  }
+  <nav>
+    <ul class="flex items-center justify-center space-x-4">
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/blog">Blog</a>
+      </li>
+    </ul>
+  </nav>
+</header>

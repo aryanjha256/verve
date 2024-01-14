@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import MainLayout from "./MainLayout.astro";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+---
+
+<MainLayout title={title} description={description}>
+  <main class="max-w-5xl mx-auto my-8 px-3" transition:animate="slide">
+    <article class="prose prose-invert">
+      <div>
+        {heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
+      </div>
+      <div>
+        <div>
+          <h1 class="text-center">{title}</h1>
+          <h2 class="text-center">{description}</h2>
+          <hr />
+        </div>
+        <slot />
+      </div>
+    </article>
+  </main>
+</MainLayout>

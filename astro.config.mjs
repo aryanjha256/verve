@@ -8,7 +8,7 @@ export default defineConfig({
   site: SITE_URL,
   integrations: [
     tailwind({
-      applyBaseStyles: false,
+      applyBaseStyles: true,
     }),
   ],
 });

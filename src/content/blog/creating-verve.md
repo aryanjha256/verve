@@ -42,6 +42,90 @@ Nigris quoque petis porrigit solebant tabuerant quodque, nomen rivus, quas licet
 pondus causam. Utraque numero, planxitque retentis labaret, iunctus incultos,
 cladi.
 
+```java
+import java.util.*;
+
+class Node implements Comparable<Node> {
+    int id;
+    int distance;
+
+    public Node(int id, int distance) {
+        this.id = id;
+        this.distance = distance;
+    }
+
+    @Override
+    public int compareTo(Node other) {
+        return Integer.compare(this.distance, other.distance);
+    }
+}
+
+public class DijkstraAlgorithm {
+    public static Map<Integer, List<int[]>> buildGraph() {
+        Map<Integer, List<int[]>> graph = new HashMap<>();
+        graph.put(0, Arrays.asList(new int[]{1, 2}, new int[]{2, 4}));
+        graph.put(1, Collections.singletonList(new int[]{3, 1}));
+        graph.put(2, Collections.singletonList(new int[]{3, 7}));
+        graph.put(3, new ArrayList<>());
+        return graph;
+    }
+
+    public static int dijkstra(Map<Integer, List<int[]>> graph, int start, int end) {
+        PriorityQueue<Node> minHeap = new PriorityQueue<>();
+        Map<Integer, Integer> distances = new HashMap<>();
+        Set<Integer> visited = new HashSet<>();
+
+        minHeap.add(new Node(start, 0));
+        distances.put(start, 0);
+
+        while (!minHeap.isEmpty()) {
+            Node currentNode = minHeap.poll();
+            int currentId = currentNode.id;
+            int currentDistance = currentNode.distance;
+
+            if (visited.contains(currentId)) {
+                continue;
+            }
+
+            if (currentId == end) {
+                return currentDistance;
+            }
+
+            visited.add(currentId);
+
+            for (int[] neighbor : graph.getOrDefault(currentId, Collections.emptyList())) {
+                int neighborId = neighbor[0];
+                int weight = neighbor[1];
+                int newDistance = currentDistance + weight;
+                int currentNeighborDistance = distances.getOrDefault(neighborId, Integer.MAX_VALUE);
+
+                if (newDistance < currentNeighborDistance) {
+                    distances.put(neighborId, newDistance);
+                    minHeap.add(new Node(neighborId, newDistance));
+                }
+            }
+        }
+
+        return -1; // No path found
+    }
+
+    public static void main(String[] args) {
+        Map<Integer, List<int[]>> graph = buildGraph();
+        int start = 0;
+        int end = 3;
+
+        int shortestPath = dijkstra(graph, start, end);
+
+        if (shortestPath != -1) {
+            System.out.println("Shortest path from " + start + " to " + end + " is: " + shortestPath);
+        } else {
+            System.out.println("No path found from " + start + " to " + end);
+        }
+    }
+}
+
+```
+
 Duro rore: fuit portus. Nec meae Proca per cessere, ignarum. Abstulerat fecerat
 verum. Quid habere armatosque flumina volentem, alienae frondescere eris? Erit
 artus metusque raptaque protinus pinguntur illis, coepitque somno fervore

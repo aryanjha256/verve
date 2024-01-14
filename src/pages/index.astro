@@ -1,7 +1,74 @@
 ---
+import { getCollection } from "astro:content";
+
 import MainLayout from "../layouts/MainLayout.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const latestPost = posts.slice(0, 4);
 ---
 
-<MainLayout title="Welcome to Astro.">
-  <h1>Verve</h1>
+<MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <div class="py-6">
+    <div class="text-4xl max-w-lg font-medium py-16">
+      <h1
+        class="bg-gradient-to-r from-slate-100 to-slate-400 inline-block text-transparent bg-clip-text"
+      >
+        {SITE_TITLE} - {SITE_DESCRIPTION}
+      </h1>
+    </div>
+    <h2 class="text-2xl font-bold mb-4">Recent Posts</h2>
+    <ul class="md:w-2/3">
+      {
+        latestPost.map((post) => (
+          <li class="py-6 space-y-2 flex flex-col">
+            <h2 class="">{post.data.title}</h2>
+            <p class="font-light text-slate-300">{post.data.description}</p>
+            <a href={`/blog/${post.slug}`}>
+              Read More
+              <svg
+                width="6"
+                height="10"
+                viewBox="0 0 6 10"
+                fill="none"
+                class="inline-block ml-2"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 9L5 5L1 1"
+                  stroke="#FDFDFC"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <a href="/blog">
+    <h3 class="text-xl my-8">
+      See All
+      <svg
+        width="6"
+        height="10"
+        viewBox="0 0 6 10"
+        fill="none"
+        class="inline-block ml-2"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M1 9L5 5L1 1"
+          stroke="#FDFDFC"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
+    </h3>
+  </a>
 </MainLayout>
