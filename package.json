@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
+    "@astrojs/rss": "^4.0.2",
+    "@astrojs/sitemap": "^3.0.4",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/rubik": "^5.0.20",
     "astro": "^4.1.2",
