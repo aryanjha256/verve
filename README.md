@@ -6,9 +6,23 @@ Verve is a minimal blog theme for Astro.
 
 Verve follows best practices for a blog website.
 
+## 🎉 Features
+
+- Awesome Performance
+- SEO Optimized
+- Sitemap and RSS
+
+## ✅ Lighthouse Score
+
+<p align="center">
+  <a href="https://pagespeed.web.dev/analysis/https-vervetheme-vercel-app/a84yqse61a?form_factor=desktop">
+    <img width="710" alt="Verve Lighthouse Score" src="lighthouse-score.svg">
+  <a>
+</p>
+
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+Inside of Verve, you'll see the following folders and files:
 
 ```text
 /
