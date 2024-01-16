@@ -2,7 +2,9 @@
 import { SITE_TITLE, SITE_LOGO } from "../config";
 ---
 
-<header class="flex items-center justify-between py-6">
+<header
+  class="flex items-center justify-between py-6 max-w-5xl px-3 md:px-6 mx-auto"
+>
   {
     SITE_LOGO ? (
       <img src={SITE_LOGO} alt={SITE_TITLE} class="w-8 h-8" />
@@ -16,7 +18,7 @@ import { SITE_TITLE, SITE_LOGO } from "../config";
         <a href="/">Home</a>
       </li>
       <li>
-        <a href="/blog">Blog</a>
+        <a href="/blog">Posts</a>
       </li>
     </ul>
   </nav>

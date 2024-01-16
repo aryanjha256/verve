@@ -9,19 +9,17 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
 <MainLayout title={title} description={description}>
-  <main class="max-w-5xl mx-auto my-8 px-3" transition:animate="slide">
-    <article class="prose prose-invert">
-      <div>
-        {heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
+  <section class="max-w-3xl mx-auto my-8">
+    <div class="border border-zinc-800">
+      {heroImage && <img src={heroImage} alt={title} />}
+    </div>
+    <div>
+      <div class="py-6 border-b border-zinc-800">
+        <h1 class="text-center text-4xl font-semibold">{title}</h1>
       </div>
-      <div>
-        <div>
-          <h1 class="text-center">{title}</h1>
-          <h2 class="text-center">{description}</h2>
-          <hr />
-        </div>
+      <article class="prose prose-invert py-8 mx-auto">
         <slot />
-      </div>
-    </article>
-  </main>
+      </article>
+    </div>
+  </section>
 </MainLayout>
