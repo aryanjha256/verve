@@ -1,6 +1,7 @@
 ---
-import "@fontsource-variable/rubik";
 import "../styles/base.css";
+import { join } from "node:path";
+import { AstroFont } from "astro-font";
 
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
@@ -20,6 +21,28 @@ const { title, description, heroImage } = Astro.props;
 <html lang="en">
   <head>
     <BaseHead {title} {description} image={heroImage} />
+    <AstroFont
+      config={[
+        {
+          src: [
+            {
+              style: "normal",
+              path: join(
+                process.cwd(),
+                "public",
+                "fonts",
+                "Rubik-VariableFont_wght.ttf"
+              ),
+            },
+          ],
+          preload: true,
+          display: "swap",
+          selector: "body",
+          fallback: "sans-serif",
+          name: "Rubik Variable",
+        },
+      ]}
+    />
     <ViewTransitions />
   </head>
   <body class="bg-[#161616] text-stone-200">

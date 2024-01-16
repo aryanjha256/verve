@@ -12,12 +12,13 @@
   "dependencies": {
     "@astrojs/check": "^0.4.1",
     "@astrojs/tailwind": "^5.1.0",
-    "@fontsource-variable/rubik": "^5.0.20",
     "astro": "^4.1.2",
+    "astro-font": "^0.0.72",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.10"
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/node": "^20.11.3"
   }
 }
