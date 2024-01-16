@@ -1,16 +1,17 @@
 body {
   font-family: "Rubik Variable", sans-serif;
+  overflow-y: scroll;
 }
 
 /* Custom scrollbar for webkit browsers */
 /* Vertical scrollbar */
 ::-webkit-scrollbar {
-  width: 8px; /* Width of the scrollbar for vertical scrolling */
-  height: 8px; /* Height of the scrollbar for horizontal scrolling */
+  width: 5px; /* Width of the scrollbar for vertical scrolling */
+  height: 5px; /* Height of the scrollbar for horizontal scrolling */
 }
 
 ::-webkit-scrollbar-track {
-  background: #2e2929; /* Track color */
+  background: transparent; /* Track color */
 }
 
 ::-webkit-scrollbar-thumb {

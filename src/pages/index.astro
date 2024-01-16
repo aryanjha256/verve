@@ -28,6 +28,7 @@ const latestPost = posts.slice(0, 4);
           <PostCard
             title={post.data.title}
             desc={post.data.description}
+            pubDate={post.data.pubDate}
             href={post.slug}
           />
         ))
@@ -36,7 +37,7 @@ const latestPost = posts.slice(0, 4);
   </div>
   <a href="/blog">
     <h3 class="text-xl my-8">
-      See All
+      Check all the Posts
       <svg
         width="6"
         height="10"
