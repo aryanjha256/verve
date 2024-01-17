@@ -20,7 +20,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     }
     <div>
       <div class="py-6 border-b border-zinc-800">
-        <h1 class="text-center text-4xl font-semibold">{title}</h1>
+        <h1 class="text-center text-4xl font-semibold" transition:name={title}>
+          {title}
+        </h1>
         <div class="font-light text-sm text-center">
           <FormattedDate date={pubDate} />
           {

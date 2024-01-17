@@ -18,7 +18,7 @@ const { href, title, desc, pubDate } = Astro.props;
         <div class="font-light text-sm">
           <FormattedDate date={pubDate} />
         </div>
-        <h2>{title}</h2>
+        <h2 transition:name={title}>{title}</h2>
       </div>
       <p class="font-light text-slate-300">{desc}</p>
     </div>
