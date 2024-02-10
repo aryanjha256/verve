@@ -6,6 +6,8 @@ pubDate: "Jul 13 2022"
 
 Astro is an open-source web framework designed for content-heavy websites, such as landing pages, blogs, and more. It offers a unique approach to building websites by combining the best of static site generators and dynamic frameworks. In this article, we will explore the key features and benefits of Astro, as well as how to get started with using it.
 
+![Astro](../../assets/gold.jpg)
+
 ## Markdown and MDX Support
 
 Astro includes built-in support for standard Markdown files, which can also include frontmatter YAML description and tags. Additionally, Astro supports MDX, a syntax that allows you to insert components into your Markdown content. This integration enables you to create rich, interactive content without the need for extensive JavaScript knowledge.
