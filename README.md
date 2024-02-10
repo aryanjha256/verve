@@ -1,6 +1,6 @@
 # Verve 🔥
 
-![Verve](public/verveimage.jpg)
+![Verve](public/vervetheme.png)
 
 Verve is a minimal blog theme for Astro.
 

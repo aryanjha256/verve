@@ -2,6 +2,7 @@
 title: "Markdown"
 description: "Support for markdown in Verve theme."
 pubDate: "Jul 13 2023"
+featured: true
 updatedDate: "14 January 2024"
 ---
 
