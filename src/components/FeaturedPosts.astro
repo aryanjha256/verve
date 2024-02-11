@@ -7,7 +7,9 @@ const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 
-const featuredPost = posts.filter((post) => post.data.featured === true);
+const featuredPost = posts
+  .filter((post) => post.data.featured === true)
+  .slice(0, 3);
 ---
 
 <h2 class="text-2xl font-bold mb-4">Featured Posts</h2>
