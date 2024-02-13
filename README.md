@@ -1,3 +1,18 @@
+# CariCambridge.com
+Website for *the* Cari Cambridge. Singer. Songwriter. All-around fun person.
+
+This site uses Astro and is based on the Verve template (TODO link).
+
+```
+yarn install
+yarn run dev
+```
+
+
+
+
+
+
 # Verve 🔥
 
 ![Verve](public/vervetheme.png)
